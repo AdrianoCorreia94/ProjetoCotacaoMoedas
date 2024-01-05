@@ -20,6 +20,17 @@ def ultimos_dias():
                                   \n   >> '))
     return dias
 
+# funcao para mostrar resultado da daily
+
+
+def resultado_daily():
+    arg_compra = arg_moeda.replace('-', '')
+    result = requests.get(url)
+    compra = json.loads(result.text)[arg_compra]
+    print('\nRESULTADO: \n')
+    for x, y in compra.items():
+        print(f'{x}: {y}')
+
 
 url_base = ('https://economia.awesomeapi.com.br/json')
 
@@ -74,5 +85,6 @@ while True:
     else:
         arg_frequencia = frequencias[frequencia-1]
         url = (f'{url_base}/{arg_frequencia}/{arg_moeda}')
+        resultado_daily()
         break
     break
