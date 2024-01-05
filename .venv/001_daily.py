@@ -10,7 +10,7 @@ import requests
 import json
 
 
-# funcao para captar o tipo de moeda que usuario deseja
+# funcao para capturar o tipo de moeda que usuario deseja
 def escolha_moeda():
     moeda = int(input('Digite a moeda desejada\
                     \n1 USD-BRL: Dolar para Real\
